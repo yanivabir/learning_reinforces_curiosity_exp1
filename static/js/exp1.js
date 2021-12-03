@@ -7,28 +7,28 @@ var images = ["../static/images/wait_instructions.jpg"]; // Images to preload
 // Get participant id form url
 var PID = jsPsych.data.getURLVariable('workerId'),
 
-// Set the block order counterbalanced
-var firstBlock = Math.random() > 0.5 ? "corona" : "general";
+// Set the block order counterbalanced//erase_from
+var firstBlock = Math.random() > 0.5 ? "corona" : "general";//erase_to
 
 // Is this a debug run?
 var debug = PID.includes("debug");
 
 // Keep important variables in global scope for convenience while debugging
-var corona_items,
+var items,
   general_items,
-  corona_items_curiosity,
-  corona_items_rating,
-  general_items_curiosity,
+  items_waiting,
+  items_rating,
+  general_items_waiting,
   general_items_rating;
 
 // Load questions from local csv file
-Papa.parse("../static/corona_questions.csv", {
+Papa.parse("../static/questions.csv", {
   download: true,
   header: true,
   dynamicTyping: true,
   complete: function(results) {
-    corona_items = results.data;
-    Papa.parse("../static/general_questions.csv", {
+    items = results.data;
+    Papa.parse("../static/general_questions.csv", {//erase_from
       download: true,
       header: true,
       dynamicTyping: true,
@@ -39,7 +39,7 @@ Papa.parse("../static/corona_questions.csv", {
           header: true,
           dynamicTyping: true,
           complete: function(results) {
-            third_block_items = results.data;
+            third_block_items = results.data;//erase_to
             postLoad();
           }
         });
@@ -58,11 +58,11 @@ function postLoad() {
   if (firstBlock == "corona") {
     // Pick 1 from each type at random
     practice_items = jsPsych.randomization.shuffle(
-      corona_items).filter(x => x['type'] == "Useful").splice(0,1).concat(
-        jsPsych.randomization.shuffle(corona_items).filter(x =>
+      items).filter(x => x['type'] == "Useful").splice(0,1).concat(
+        jsPsych.randomization.shuffle(items).filter(x =>
         x['type'] == "Not useful").splice(0,1));
     // Remove them from corona list
-    corona_items = corona_items.filter(x => !practice_items.includes(x));
+    items = items.filter(x => !practice_items.includes(x));
   } else {
     // Pick 1 from each type at random
     practice_items = jsPsych.randomization.shuffle(
@@ -76,25 +76,25 @@ function postLoad() {
   // Split items to curiosity and ratings sets ----
 
   // First shuffle items makeing sure both types are evenly disperesed throughout list
-  corona_items = pseudoShuffle(corona_items, ["Useful", "Not useful"], 6);
+  items = pseudoShuffle(items, ["Useful", "Not useful"], 6);
   general_items = pseudoShuffle(general_items, ["Useful", "Not useful"], 6);
   third_block_items = pseudoShuffle(third_block_items, ["Trivia", "MTurk"], 6);
 
   // Choose items for wtw task and ratings for each block
-  corona_items_curiosity = corona_items.slice(0,
-    corona_items.length - n_for_ratings);
-  corona_items_rating = corona_items.slice(
-    corona_items.length - n_for_ratings, corona_items.length);
+  items_waiting = items.slice(0,
+    items.length - n_for_ratings);
+  items_rating = items.slice(
+    items.length - n_for_ratings, items.length);
 
-  general_items_curiosity = general_items.slice(0,
+  general_items_waiting = general_items.slice(0,//erase_from
     general_items.length - n_for_ratings);
   general_items_rating = general_items.slice(
     general_items.length - n_for_ratings, general_items.length);
 
-  third_block_items_curiosity = third_block_items.slice(0,
+  third_block_items_waiting = third_block_items.slice(0,
     third_block_items.length - n_for_ratings);
   third_block_items_rating = third_block_items.slice(
-    third_block_items.length - n_for_ratings, third_block_items.length);
+    third_block_items.length - n_for_ratings, third_block_items.length);//erase_to
 
   // Set timing parameters for waiting task practice block
   practice_items[0]["wait_time"] = waits[1];
@@ -105,9 +105,9 @@ function postLoad() {
     ITI_range[0];
 
   // Draw timing parameters for waiting task
-  corona_items_curiosity = drawTimes(corona_items_curiosity);
-  general_items_curiosity = drawTimes(general_items_curiosity);
-  third_block_items_curiosity = drawTimes(third_block_items_curiosity);
+  items_waiting = drawTimes(items_waiting);
+  general_items_waiting = drawTimes(general_items_waiting);
+  third_block_items_waiting = drawTimes(third_block_items_waiting);
 
   // Set up the first trial, the transitions to fullscreen.
   // This trial also saves the PID to the data, and sets the counterbalanced
@@ -157,21 +157,21 @@ function postLoad() {
 
   wait_block1 = {
     timeline: wait_timeline,
-    timeline_variables: firstBlock == "corona" ? corona_items_curiosity : general_items_curiosity
+    timeline_variables: items_waiting 
   }
 
   wait_block2 = {
     timeline: wait_timeline,
-    timeline_variables: firstBlock == "corona" ? general_items_curiosity : corona_items_curiosity
+    timeline_variables: firstBlock == "corona" ? general_items_waiting : items_waiting
   }
 
   wait_block3 = {
     timeline: wait_timeline,
-    timeline_variables: third_block_items_curiosity
+    timeline_variables: third_block_items_waiting
   }
 
   // Building rating block
-  var items_rating = corona_items_rating.concat(general_items_rating).concat(third_block_items_rating);
+  var items_rating = items_rating.concat(general_items_rating).concat(third_block_items_rating);
 
   // Shuffle probe order across trials
   for (i = 0; i < items_rating.length; i++) {
@@ -277,29 +277,29 @@ function postLoad() {
 
   // Put it all together
   experiment.push(fullscreen);
-  experiment.push(welcome);
-  experiment = experiment.concat(wait_instructions1);
-  experiment.push(wait_practice_block);
-  experiment.push(wait_instructions_post_practice);
+  // experiment.push(welcome);
+  // experiment = experiment.concat(wait_instructions1);
+  // experiment.push(wait_practice_block);
+  // experiment.push(wait_instructions_post_practice);
   experiment.push(wait_block1);
-  experiment.push(wait_instructions2);
-  experiment.push(wait_block2);
-  experiment.push(wait_instructions2);
-  experiment.push(wait_block3);
-  experiment.push(rating_instructions);
-  experiment.push(rating_block);
-  experiment.push(forced_choice_instructions1);
-  experiment = experiment.concat(forced_choice_trial);
-  experiment.push(forced_choice_instructions2);
-  experiment.push(read_fact_block);
-  experiment.push(pre_questionnaires_message);
-  experiment = experiment.concat(five_d);
-  experiment = experiment.concat(gallup_block);
-  experiment = experiment.concat(resilience_quest);
-  experiment = experiment.concat(anxiety);
-  experiment = experiment.concat(corona_perception_block);
-  experiment = experiment.concat(demographic_block);
-  experiment = experiment.concat(debrief);
+  // experiment.push(wait_instructions2);
+  // experiment.push(wait_block2);
+  // experiment.push(wait_instructions2);
+  // experiment.push(wait_block3);
+  // experiment.push(rating_instructions);
+  // experiment.push(rating_block);
+  // experiment.push(forced_choice_instructions1);
+  // experiment = experiment.concat(forced_choice_trial);
+  // experiment.push(forced_choice_instructions2);
+  // experiment.push(read_fact_block);
+  // experiment.push(pre_questionnaires_message);
+  // experiment = experiment.concat(five_d);
+  // experiment = experiment.concat(gallup_block);
+  // experiment = experiment.concat(resilience_quest);
+  // experiment = experiment.concat(anxiety);
+  // experiment = experiment.concat(perception_block);
+  // experiment = experiment.concat(demographic_block);
+  // experiment = experiment.concat(debrief);
 
   // Prevent right clicking and refreshing the page
   if (!debug) {
