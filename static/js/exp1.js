@@ -25,7 +25,7 @@ Papa.parse("../static/questions.csv", {
   dynamicTyping: true,
   complete: function(results) {
     items = results.data;
-    
+    postLoad()
   }
 });
 
