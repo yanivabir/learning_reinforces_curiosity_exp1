@@ -7,19 +7,16 @@ var images = ["../static/images/wait_instructions.jpg"]; // Images to preload
 // Get participant id form url
 var PID = jsPsych.data.getURLVariable('workerId'),
 
-// Set the block order counterbalanced//erase_from
-var firstBlock = Math.random() > 0.5 ? "corona" : "general";//erase_to
+
 
 // Is this a debug run?
 var debug = PID.includes("debug");
 
 // Keep important variables in global scope for convenience while debugging
 var items,
-  general_items,
+  items,
   items_waiting,
-  items_rating,
-  general_items_waiting,
-  general_items_rating;
+  items_rating;
 
 // Load questions from local csv file
 Papa.parse("../static/questions.csv", {
@@ -28,23 +25,7 @@ Papa.parse("../static/questions.csv", {
   dynamicTyping: true,
   complete: function(results) {
     items = results.data;
-    Papa.parse("../static/general_questions.csv", {//erase_from
-      download: true,
-      header: true,
-      dynamicTyping: true,
-      complete: function(results) {
-        general_items = results.data;
-        Papa.parse("../static/third_block.csv", {
-          download: true,
-          header: true,
-          dynamicTyping: true,
-          complete: function(results) {
-            third_block_items = results.data;//erase_to
-            postLoad();
-          }
-        });
-      }
-    });
+    
   }
 });
 
@@ -66,18 +47,18 @@ function postLoad() {
   } else {
     // Pick 1 from each type at random
     practice_items = jsPsych.randomization.shuffle(
-      general_items).filter(x => x['type'] ==
-      "Useful").splice(0,1).concat(jsPsych.randomization.shuffle(general_items).filter(x =>
+      items).filter(x => x['type'] ==
+      "Useful").splice(0,1).concat(jsPsych.randomization.shuffle(items).filter(x =>
         x['type'] == "Not useful").splice(0,1));
     // Remove them from general list
-    general_items = general_items.filter(x => !practice_items.includes(x));
+    items = items.filter(x => !practice_items.includes(x));
   }
 
   // Split items to curiosity and ratings sets ----
 
   // First shuffle items makeing sure both types are evenly disperesed throughout list
   items = pseudoShuffle(items, ["Useful", "Not useful"], 6);
-  general_items = pseudoShuffle(general_items, ["Useful", "Not useful"], 6);
+  items = pseudoShuffle(items, ["Useful", "Not useful"], 6);
   third_block_items = pseudoShuffle(third_block_items, ["Trivia", "MTurk"], 6);
 
   // Choose items for wtw task and ratings for each block
@@ -86,15 +67,7 @@ function postLoad() {
   items_rating = items.slice(
     items.length - n_for_ratings, items.length);
 
-  general_items_waiting = general_items.slice(0,//erase_from
-    general_items.length - n_for_ratings);
-  general_items_rating = general_items.slice(
-    general_items.length - n_for_ratings, general_items.length);
 
-  third_block_items_waiting = third_block_items.slice(0,
-    third_block_items.length - n_for_ratings);
-  third_block_items_rating = third_block_items.slice(
-    third_block_items.length - n_for_ratings, third_block_items.length);//erase_to
 
   // Set timing parameters for waiting task practice block
   practice_items[0]["wait_time"] = waits[1];
@@ -106,7 +79,7 @@ function postLoad() {
 
   // Draw timing parameters for waiting task
   items_waiting = drawTimes(items_waiting);
-  general_items_waiting = drawTimes(general_items_waiting);
+  items_waiting = drawTimes(items_waiting);
   third_block_items_waiting = drawTimes(third_block_items_waiting);
 
   // Set up the first trial, the transitions to fullscreen.
@@ -162,7 +135,7 @@ function postLoad() {
 
   wait_block2 = {
     timeline: wait_timeline,
-    timeline_variables: firstBlock == "corona" ? general_items_waiting : items_waiting
+    timeline_variables: firstBlock == "corona" ? items_waiting : items_waiting
   }
 
   wait_block3 = {
@@ -171,7 +144,7 @@ function postLoad() {
   }
 
   // Building rating block
-  var items_rating = items_rating.concat(general_items_rating).concat(third_block_items_rating);
+  var items_rating = items_rating.concat(items_rating).concat(third_block_items_rating);
 
   // Shuffle probe order across trials
   for (i = 0; i < items_rating.length; i++) {
