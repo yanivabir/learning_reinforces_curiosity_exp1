@@ -5,7 +5,7 @@ var sess = 1, // Session number
 var images = ["../static/images/wait_instructions.jpg"]; // Images to preload
 
 // Get participant id form url
-var PID = jsPsych.data.getURLVariable('workerId'),
+var PID = jsPsych.data.getURLVariable('workerId')
 
 
 
