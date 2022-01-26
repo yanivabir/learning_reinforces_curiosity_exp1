@@ -34,32 +34,20 @@ var experiment = [];
 // Loading csvs takes time. That's why we wrap everything else in a function that only
 // runs after the csvs load
 function postLoad() {
-
-  // Separate 2 items for practice block - one from each type
-  if (firstBlock == "corona") {
-    // Pick 1 from each type at random
-    practice_items = jsPsych.randomization.shuffle(
-      items).filter(x => x['type'] == "Useful").splice(0,1).concat(
-        jsPsych.randomization.shuffle(items).filter(x =>
-        x['type'] == "Not useful").splice(0,1));
-    // Remove them from corona list
-    items = items.filter(x => !practice_items.includes(x));
-  } else {
-    // Pick 1 from each type at random
-    practice_items = jsPsych.randomization.shuffle(
-      items).filter(x => x['type'] ==
-      "Useful").splice(0,1).concat(jsPsych.randomization.shuffle(items).filter(x =>
-        x['type'] == "Not useful").splice(0,1));
-    // Remove them from general list
-    items = items.filter(x => !practice_items.includes(x));
-  }
+var practice_items=[]
+  var Categories = jsPsych.randomization.shuffle(
+    ["Animal", "Art", "Food", "Geography"])
+  for (i=0;i<4;i++)
+  {practice_items.push (jsPsych.randomization.shuffle(
+    items).filter(x => x['type'] == Categories[i]).splice(0,1))}
+// Remove them from general list
+items = items.filter(x => !practice_items.includes(x));
+  
 
   // Split items to curiosity and ratings sets ----
-
   // First shuffle items makeing sure both types are evenly disperesed throughout list
-  items = pseudoShuffle(items, ["Useful", "Not useful"], 6);
-  items = pseudoShuffle(items, ["Useful", "Not useful"], 6);
-  third_block_items = pseudoShuffle(third_block_items, ["Trivia", "MTurk"], 6);
+  items = pseudoShuffle(items, Categories, 12);
+
 
   // Choose items for wtw task and ratings for each block
   items_waiting = items.slice(0,
@@ -70,17 +58,10 @@ function postLoad() {
 
 
   // Set timing parameters for waiting task practice block
-  practice_items[0]["wait_time"] = waits[1];
-  practice_items[1]["wait_time"] = waits[0];
-  practice_items[0]["ITI_next"] = Math.random() * (ITI_range[1] - ITI_range[0]) +
-    ITI_range[0];
-  practice_items[1]["ITI_next"] = Math.random() * (ITI_range[1] - ITI_range[0]) +
-    ITI_range[0];
+  practice_items = drawTimes(practice_items);
 
   // Draw timing parameters for waiting task
   items_waiting = drawTimes(items_waiting);
-  items_waiting = drawTimes(items_waiting);
-  third_block_items_waiting = drawTimes(third_block_items_waiting);
 
   // Set up the first trial, the transitions to fullscreen.
   // This trial also saves the PID to the data, and sets the counterbalanced
