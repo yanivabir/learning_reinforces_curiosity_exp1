@@ -234,7 +234,7 @@ items = items.filter(x => !practice_items.includes(x));
   // experiment.push(welcome);
   // experiment = experiment.concat(wait_instructions1);
   // experiment.push(wait_practice_block);
-  // experiment.push(wait_instructions_post_practice);
+  experiment.push(wait_instructions_post_practice);
   experiment.push(wait_block1);
   // experiment.push(wait_instructions2);
   // experiment.push(wait_block2);
