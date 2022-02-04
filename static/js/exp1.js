@@ -39,7 +39,7 @@ var practice_items=[]
     ["Animal", "Art", "Food", "Geography"])
   for (i=0;i<4;i++)
   {practice_items.push (jsPsych.randomization.shuffle(
-    items).filter(x => x['type'] == Categories[i]).splice(0,1))}
+    items).filter(x => x['type'] == Categories[i])[0])}
 // Remove them from general list
 items = items.filter(x => !practice_items.includes(x));
   
@@ -78,7 +78,7 @@ items = items.filter(x => !practice_items.includes(x));
       jsPsych.data.addProperties({
         n_warnings: 0,
         PID: PID,
-        firstBlock: firstBlock,
+       
         sess: sess,
         version: version
       });
@@ -113,19 +113,9 @@ items = items.filter(x => !practice_items.includes(x));
     timeline: wait_timeline,
     timeline_variables: items_waiting 
   }
+  
 
-  wait_block2 = {
-    timeline: wait_timeline,
-    timeline_variables: firstBlock == "corona" ? items_waiting : items_waiting
-  }
 
-  wait_block3 = {
-    timeline: wait_timeline,
-    timeline_variables: third_block_items_waiting
-  }
-
-  // Building rating block
-  var items_rating = items_rating.concat(items_rating).concat(third_block_items_rating);
 
   // Shuffle probe order across trials
   for (i = 0; i < items_rating.length; i++) {
