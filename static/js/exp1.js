@@ -46,8 +46,8 @@ items = items.filter(x => !practice_items.includes(x));
 
   // Split items to curiosity and ratings sets ----
   // First shuffle items makeing sure both types are evenly disperesed throughout list
-  items = pseudoShuffle(items, Categories, 12);
-
+ 
+items = jsPsych.randomization.shuffle(items);
 
   // Choose items for wtw task and ratings for each block
   items_waiting = items.slice(0,
