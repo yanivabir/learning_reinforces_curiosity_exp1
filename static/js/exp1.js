@@ -40,7 +40,7 @@ var practice_items=[]
   for (i=0;i<4;i++)
   {practice_items.push (jsPsych.randomization.shuffle(
     items).filter(x => x['type'] == Categories[i])[0])}
-// Remove them from general list
+// Remove them from general list, n-4
 items = items.filter(x => !practice_items.includes(x));
   
 
