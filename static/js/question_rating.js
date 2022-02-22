@@ -14,23 +14,19 @@ var rating_trial = [fullscreen_prompt,
   {
     // Curiosity rating
     type: "html-button-response",
-    stimulus: "Was the answer worth the wait?",
+    //add in a function around jsPsych.timelineVariable('question')
+    stimulus: "How curious are you to know+jsPsych.timelineVariable('question')?",
     choices: ["1", "2", "3", "4", "5"],
-    post_trial_gap: jsPsych.timelineVariable('ITI_next'),
-    trial_duration: satisfactionMaxTime,
-    prompt: "<div id='satsifaction_prompt'><i>1</i> = Not at all, <i>5</i> = Extremely worth it</div>",
+    prompt: "<div id='satisfaction_prompt'><i>1</i> = Not at all, <i>5</i> = Extremely curious</div>",
     margin_horizontal: "30px",
     margin_vertical: "80px",
     data: {
-      category: "wait_satisfaction",
-      ITI_next: jsPsych.timelineVariable('ITI_next'),
+      category: "curiosity_rating",
       questionId: jsPsych.timelineVariable('questionId'),
-      wait_duration: jsPsych.timelineVariable('wait_time'),
       type: jsPsych.timelineVariable('type'),
       block: jsPsych.timelineVariable('block')
     }
   },
-
 ]
 
 // Rating instructions
