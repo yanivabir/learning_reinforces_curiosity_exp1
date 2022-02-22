@@ -2,92 +2,35 @@
 
 // This is the list of probes each question should be rated on
 var rating_probes = [{
-    prompt: "...something that has an element of randomness",
-    labels: ["1<br>Not at all", "2", "3", "4", "5", "6", "7<br>Very much"],
+    prompt: "How curious are you to know the answer to this question?",
+    labels: ["1<br>Not at all", "2", "3", "4", "5<br>Very much"],
     required: true,
-    name: "epstm_random_element"
+    name: "curiousity_rating"
   },
-  {
-    prompt: "...knowable in principle, given enough information",
-    labels: ["1<br>Not at all", "2", "3", "4", "5", "6", "7<br>Very much"],
-    required: true,
-    name: "epstm_knowable"
-  },
-  {
-    prompt: "...determined by chance factors",
-    labels: ["1<br>Not at all", "2", "3", "4", "5", "6", "7<br>Very much"],
-    required: true,
-    name: "epstm_detemined_chance"
-  },
-  {
-    prompt: "…something that well-informed people would agree on",
-    labels: ["1<br>Not at all", "2", "3", "4", "5", "6", "7<br>Very much"],
-    required: true,
-    name: "epstm_informed_agree"
-  },
-  {
-    prompt: "...something that would be useful for me to know",
-    labels: ["1<br>Not at all", "2", "3", "4", "5", "6", "7<br>Very much"],
-    required: true,
-    name: "useful_me"
-  },
-  {
-    prompt: "...something that would be useful for the average person to know",
-    labels: ["1<br>Not at all", "2", "3", "4", "5", "6", "7<br>Very much"],
-    required: true,
-    name: "useful_average"
-  }
 ]
 
 // Rating trial
 var rating_trial = [fullscreen_prompt,
-  // Introduce questions
   {
+    // Curiosity rating
     type: "html-button-response",
-    stimulus: function() {
-      return "<div id='instruct'><p>We are interested in your judgment about this question:</p>\
-      <p><i>" + jsPsych.timelineVariable('question', true) + "</i></p></div>"
-    },
-    choices: ["Continue"],
-    data:{
-      category: "rating_intro_question",
-      questionId: jsPsych.timelineVariable('questionId')
+    stimulus: "Was the answer worth the wait?",
+    choices: ["1", "2", "3", "4", "5"],
+    post_trial_gap: jsPsych.timelineVariable('ITI_next'),
+    trial_duration: satisfactionMaxTime,
+    prompt: "<div id='satsifaction_prompt'><i>1</i> = Not at all, <i>5</i> = Extremely worth it</div>",
+    margin_horizontal: "30px",
+    margin_vertical: "80px",
+    data: {
+      category: "wait_satisfaction",
+      ITI_next: jsPsych.timelineVariable('ITI_next'),
+      questionId: jsPsych.timelineVariable('questionId'),
+      wait_duration: jsPsych.timelineVariable('wait_time'),
+      type: jsPsych.timelineVariable('type'),
+      block: jsPsych.timelineVariable('block')
     }
   },
-  // First page of probes
-  {
-    type: "survey-likert",
-    preamble: function() {
-      return "<p><i>" + jsPsych.timelineVariable('question', true) + "</i></p>\
-      <p>The answer to the question above is…</p>"
-    },
-    questions: function() {
-      return jsPsych.timelineVariable('probes', true).slice(0, 3)
-    },
-    scale_width: 400,
-    post_trial_gap: 100,
-    data:{
-      category: "rating_question1",
-      questionId: jsPsych.timelineVariable('questionId')
-    }
-  },
-  // Second page of probes
-  {
-    type: "survey-likert",
-    preamble: function() {
-      return "<p><i>" + jsPsych.timelineVariable('question', true) + "</i></p>\
-      <p>The information in the question above is…</p>"
-    },
-    questions: function() {
-      return jsPsych.timelineVariable('probes', true).slice(3, 6)
-    },
-    scale_width: 400,
-    post_trial_gap: 300,
-    data:{
-      category: "rating_question2",
-      questionId: jsPsych.timelineVariable('questionId')
-    }
-  }
+
 ]
 
 // Rating instructions
