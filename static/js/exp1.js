@@ -1,7 +1,7 @@
 // Parameters
 var sess = 1, // Session number
   version = 1.0, // Code version number
-  n_for_ratings = 5; // How many items to save for rating measurement
+  n_for_ratings = 20; // How many items to save for rating measurement
 var images = ["../static/images/wait_instructions.jpg"]; // Images to preload
 
 // Get participant id form url
@@ -46,7 +46,7 @@ items = items.filter(x => !practice_items.includes(x));
 
   // Split items to curiosity and ratings sets ----
   // First shuffle items makeing sure both types are evenly disperesed throughout list
- 
+  
 items = jsPsych.randomization.shuffle(items);
 
   // Choose items for wtw task and ratings for each block
