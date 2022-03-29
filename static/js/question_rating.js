@@ -14,7 +14,6 @@ var rating_trial = [fullscreen_prompt,
   {
     // Curiosity rating
     type: "html-button-response",
-    //add in a function around jsPsych.timelineVariable('question')
     stimulus: function() {
       return "How curious are you to know<br>" + jsPsych.timelineVariable('question')} ,
     choices: ["1", "2", "3", "4", "5"],
