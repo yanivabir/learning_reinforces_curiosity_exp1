@@ -1,11 +1,12 @@
 // Javascript functions and varialbes for meusring ratings about questions
-
+var rating_ITI = 500
 // This is the list of probes each question should be rated on
 var rating_probes = [{
     prompt: "How curious are you to know the answer to this question?",
     labels: ["1<br>Not at all", "2", "3", "4", "5<br>Very much"],
     required: true,
     name: "curiousity_rating"
+
   },
 ]
 
@@ -15,11 +16,12 @@ var rating_trial = [fullscreen_prompt,
     // Curiosity rating
     type: "html-button-response",
     stimulus: function() {
-      return "How curious are you to know<br>" + jsPsych.timelineVariable('question', true)} ,
+      return "How curious are you to know:<br>" + jsPsych.timelineVariable('question', true)} ,
     choices: ["1", "2", "3", "4", "5"],
     prompt: "<div id='satisfaction_prompt'><i>1</i> = Not at all, <i>5</i> = Extremely curious</div>",
     margin_horizontal: "30px",
     margin_vertical: "80px",
+    post_trial_gap: rating_ITI,
     data: {
       category: "curiosity_rating",
       questionId: jsPsych.timelineVariable('questionId'),
