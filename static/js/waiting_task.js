@@ -53,7 +53,7 @@ var answer_n_respond = [kick_out, {
   type: 'html-keyboard-response',
   stimulus: '<div style="font-size: 150%">Please press continue after reading the answer</div>',
   choices: jsPsych.NO_KEYS,
-  trial_duration: maxAnswerTime,
+  trial_duration: tooSlowTime,
   on_finish: function() {
     var up_to_now = parseInt(jsPsych.data.get().last(1).select('n_warnings').values);
     jsPsych.data.addProperties({
