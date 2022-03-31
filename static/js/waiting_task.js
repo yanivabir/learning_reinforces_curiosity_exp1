@@ -171,6 +171,10 @@ var wait_trial = [fullscreen_prompt, {
     margin_vertical: "80px",
     trial_duration: maxStimDuration,
     min_response_time: minResponseTime,
+    on_load: function(){ // Disable the buttons for the minimal response time so that it's clear
+      $('button').prop('disabled', true);
+      setTimeout(function(){$('button').prop('disabled', false);}, minResponseTime)
+    },
     data: {
       category: 'wait_question',
       questionId: jsPsych.timelineVariable('questionId'),
