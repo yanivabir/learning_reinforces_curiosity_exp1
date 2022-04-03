@@ -90,7 +90,7 @@ items = jsPsych.randomization.shuffle(items);
     type: "html-button-response",
     stimulus: "<div id='instruct'><p>In this study, you will be asked to complete \
       several tasks and answer multiple questions. Throughout the study, we are \
-      interested in your own personal judgments, views and knowledge.</p>\
+      interested in your own personal judgments, views, and knowledge.</p>\
       <p>It is important that you stay engaged throughout this study. We will\
       monitor the data for use of other apps or lack of attention, and give \
       an extra $2 bonus for full engagement with the task.</p><p>Thank you for\
@@ -149,18 +149,12 @@ items = jsPsych.randomization.shuffle(items);
   var debrief = [{
       type: "instructions",
       pages: ['<div id="instruct">Thank you for participating in this experiment!<p>\
-      In this study we were interested in people\'s curiosity about different \
+      In this study, we are interested in people\'s curiosity about different \
       types of questions.</p>\
-      <p>Any health information presented in this experiment was based on the \
-      researchers’ reading of current publicly available information from the \
-      Center for Disease Control and other reputable health and news media \
-      websites but should not be taken as medical advice. If you have any \
-      questions about your health, you should seek the judgment of a medical \
-      professional.</p>\
-      <p>We will process your data within 48h and grant you an extra $2 to any \
+      <p>We will process your data within 48 hours and grant you an extra $2 to any \
       participant that stayed engaged throughout the task.</p>\
       <p>You will recieve an email invitiation for the next session early next week.</p>\
-      <p>You\'ll  recieve $2 special bonus for participating in another session.</p></div>'],
+      <p>You will  recieve $2 special bonus for participating in another session.</p></div>'],
       show_clickable_nav: true,
       allow_keys: false,
       data: {
@@ -175,7 +169,7 @@ items = jsPsych.randomization.shuffle(items);
       type: "instructions",
       pages: ["<div id ='instruct'><p>Once you press the <i>Next</i> \
     button, your results will be uploaded to the server, and the experiment will\
-    complete. <b>This may take several minutes - do not \
+    be complete. <b>This may take several minutes - please do not \
     refresh or close your browser during this time.</b></p>\
     <p>After your results are uploaded to the server, you will be presented \
     with the completion code for MTurk.\
