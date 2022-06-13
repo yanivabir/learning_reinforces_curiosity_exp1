@@ -244,7 +244,8 @@ var wait_instructions1 = [{
     timeline: [{
         type: 'instructions',
         pages: ['<div id="instruct"><p>You will now do a computer task about curiosity. Press the <i>Next</i> button to read the instructions for this task.</p></div>',
-          '<div id="instruct"><p>In this task, you will be shown a series of trivia questions. For each question, you must decide if you want to know the answer to the question.<br></p><p>If you want to find out the answer, you will have to wait a certain amount of time.</p><p>If you do not want to wait to see the answer, you can choose to skip the question.</p><p>If you are 100% certain that you already know the answer to the question, you may indicate that you already know it.</p><p>If you choose to skip or indicate that you know the answer, you will NOT see the answer to the question.</p></div>',
+          '<div id="instruct"><p>In this task, you will be shown a series of trivia questions about animals, the arts, food or geography.</p></div>',
+          '<div id="instruct"><p>For each question, you must decide if you want to know the answer to the question.<br></p><p>If you want to find out the answer, you will have to wait a certain amount of time.</p><p>If you do not want to wait to see the answer, you can choose to skip the question.</p><p>If you are 100% certain that you already know the answer to the question, you may indicate that you already know it.</p><p>If you choose to skip or indicate that you know the answer, you will NOT see the answer to the question.</p></div>',
           '<div id="instruct"><p>When you are first shown the trivia question, the screen will look like this:<p>\
   <center><img width="50%" src="../static/images/wait_instructions.jpg" border="1"></center>\
   <p>You will use the mouse to indicate that you would like to wait for the answer, skip the question, or that you know its answer.</p></div>',
@@ -321,9 +322,7 @@ var wait_instructions_post_practice = {
   type: "instructions",
   pages: ['<div id="instruct"><p>You will now begin the full version of the \
   task. The task will continue for ' + maxTaskTime + ' minutes.</p>\
-  <p><b>Please remain focused on this task for the next ' + maxTaskTime +
-    ' minutes. We are able to note when participants click away from the task \
-  and we will review all data before approving the HIT.</b></p></div>'
+  </div>'
   ],
   show_clickable_nav: true,
   allow_keys: false,
@@ -357,6 +356,18 @@ var wait_instructions2 = {
     });
   }
 };
+
+var wait_instructions_post_task = {
+  type: 'instructions',
+  pages: ['<div id="instruct"><p>You finished the first task in this study.</p>\
+    <p>Press next to continue to the next task.</p></div>'],
+  show_clickable_nav: true,
+  allow_keys: false,
+  data: {
+    category: "wait_instructions_post"
+  }
+};
+
 
 // A function that assigns waiting tines and ITIs to a list of trials
 function drawTimes(items) {

@@ -1,7 +1,7 @@
 // Parameters
 var sess = 1, // Session number
   version = 1.0, // Code version number
-  n_for_ratings = 20; // How many items to save for rating measurement
+  n_for_ratings = 5;//20; // How many items to save for rating measurement
 var images = ["../static/images/wait_instructions.jpg"]; // Images to preload
 
 // Get participant id form url
@@ -215,16 +215,17 @@ items = jsPsych.randomization.shuffle(items);
 
   // Put it all together
   experiment.push(fullscreen);
-  // experiment.push(welcome);
+  experiment.push(welcome);
   experiment = experiment.concat(wait_instructions1);
   experiment.push(wait_practice_block);
-  // experiment.push(wait_instructions_post_practice);
-  // experiment.push(wait_block1);
-  // experiment.push(rating_instructions);
+  experiment.push(wait_instructions_post_practice);
+  experiment.push(wait_block1);
+  experiment.push(wait_instructions_post_task);
+  experiment.push(rating_instructions);
   experiment.push(rating_block);
-  // experiment.push(pre_questionnaires_message);
-  // experiment = experiment.concat(demographic_block);
-  // experiment = experiment.concat(debrief);
+  experiment.push(pre_questionnaires_message);
+  experiment = experiment.concat(demographic_block);
+  experiment = experiment.concat(debrief);
 
   // Prevent right clicking and refreshing the page
   if (!debug) {
