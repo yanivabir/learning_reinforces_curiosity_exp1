@@ -1,7 +1,7 @@
 // Parameters
 var sess = 1, // Session number
   version = 1.0, // Code version number
-  n_for_ratings = 5;//20; // How many items to save for rating measurement
+  n_for_ratings = 30;//20; // How many items to save for rating measurement
 var images = ["../static/images/wait_instructions.jpg"]; // Images to preload
 
 // Get participant id form url

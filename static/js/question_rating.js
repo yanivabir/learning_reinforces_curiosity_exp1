@@ -1,4 +1,4 @@
-// Javascript functions and varialbes for meusring ratings about questions
+// Javascript functions and varialbes for measuring ratings about questions
 var rating_ITI = 500
 // This is the list of probes each question should be rated on
 var rating_probes = [{
