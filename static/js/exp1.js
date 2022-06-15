@@ -224,6 +224,15 @@ items = jsPsych.randomization.shuffle(items);
   experiment.push(rating_instructions);
   experiment.push(rating_block);
   experiment.push(pre_questionnaires_message);
+  experiment.push(impulse_message);
+  experiment = experiment.concat(impulsive);
+  experiment.push(regfocus_message);
+  experiment = experiment.concat(reg_focus);
+  experiment.push(apathy_message);
+  experiment = experiment.concat(apathy);
+  experiment.push(pleasure_message);
+  experiment = experiment.concat(pleasure);
+  experiment.push(demog_message);
   experiment = experiment.concat(demographic_block);
   experiment = experiment.concat(debrief);
 

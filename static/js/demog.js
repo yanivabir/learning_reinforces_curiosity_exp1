@@ -66,5 +66,49 @@ demographic_block = [
     data: {
       category: 'demographics'
     }
-  }
+  },
+  {
+    type: "survey-text",
+    questions: [{
+        prompt: "<div id='instruct'>Did you encounter any difficulties while completing the tasks today?</div>",
+        columns: 35,
+        rows: 2,
+        value: '',
+        name: "difficult",
+        required: true
+      },
+      {
+        prompt: "<div id='instruct'>Was there anything unclear in the instructions?</div>",
+        columns: 35,
+        rows: 2,
+        value: '',
+        name: "instructions",
+        required: true
+      },
+      {
+        prompt: "<div id='instruct'>Was there anything you did that helped you complete the tasks more easily?</div>",
+        columns: 35,
+        rows: 2,
+        value: '',
+        name: "strategy",
+        required: true
+      }
+    ],
+    data: {
+      category: 'difficulties'
+    }
+  }, 
 ]
+
+// Message that shows up before demographic section
+var demog_message = {
+type: "html-button-response",
+stimulus: '<div id="instruct"><p>You will now answer a few questions \
+  about your demographic information.</p></div>',
+  choices: ["Continue"],
+  margin_vertical: "80px",
+  data: {
+    category: 'demog_message'
+  },
+  post_trial_gap: 200
+}
