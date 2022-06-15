@@ -38,7 +38,7 @@ var rating_instructions = {
   type: "instructions",
   pages: [
     "<div id='instruct'><p>In the next part of this experiment, you will be \
-    presented with 20 qustions. We would like you to rate each of these \
+    presented with 30 qustions. We would like you to rate each of these \
     questions on several scales.</p></div>",
     "<div id='instruct'><p>In this study we are interested in your own personal \
     judgment. Therefore it is important that you rely only on your own \
