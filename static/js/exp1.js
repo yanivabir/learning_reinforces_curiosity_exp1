@@ -223,6 +223,7 @@ items = jsPsych.randomization.shuffle(items);
   experiment.push(wait_instructions_post_task);
   experiment.push(rating_instructions);
   experiment.push(rating_block);
+  experiment.push(post_rating);
   experiment.push(pre_questionnaires_message);
   experiment.push(impulse_message);
   experiment = experiment.concat(impulsive);

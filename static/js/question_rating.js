@@ -52,3 +52,42 @@ var rating_instructions = {
     category: "rating_instructions1"
   }
 }
+
+var post_rating_qs = jsPsych.randomization.shuffle([{
+          prompt: "Trivia about animals",
+          labels: ["1<br>Not at all", "2", "3", "4", "5<br>Very interesting"],
+          required: true,
+          name: "post_animals"
+        },
+        {
+          prompt: "Trivia about geography",
+          labels: ["1<br>Not at all", "2", "3", "4", "5<br>Very interesting"],
+          required: true,
+          name: "post_geography"
+        },
+        {
+          prompt: "Trivia about the arts",
+          labels: ["1<br>Not at all", "2", "3", "4", "5<br>Very interesting"],
+          required: true,
+          name: "post_art"
+        },
+        {
+          prompt: "Trivia about food",
+          labels: ["1<br>Not at all", "2", "3", "4", "5<br>Very interesting"],
+          required: true,
+          name: "post_food"
+        }]);
+
+var post_rating = {
+  type: "survey-likert",
+  preamble: '<div id="instruct"><p>Plese rate how interesting you found the information presented so far for each topic in this study:</p></div>',
+  randomize_question_order: true,
+  scale_width: 500,
+  data: {
+    category: "post_task_preferences"
+  },
+  timeline: [
+    {questions: post_rating_qs.splice(0,2)},
+    {questions: post_rating_qs}
+  ]
+  }

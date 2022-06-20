@@ -240,11 +240,60 @@ var wait_timeline = [{
 }];
 
 // Instructions for the waiting task ---------------------------
+
+var pre_waiting_qs = jsPsych.randomization.shuffle([{
+          prompt: "Animals",
+          labels: ["1<br>Not at all", "2", "3", "4", "5<br>Very interested"],
+          required: true,
+          name: "pre_animals"
+        },
+        {
+          prompt: "Geography",
+          labels: ["1<br>Not at all", "2", "3", "4", "5<br>Very interested"],
+          required: true,
+          name: "pre_geography"
+        },
+        {
+          prompt: "The arts",
+          labels: ["1<br>Not at all", "2", "3", "4", "5<br>Very interested"],
+          required: true,
+          name: "pre_art"
+        },
+        {
+          prompt: "Food",
+          labels: ["1<br>Not at all", "2", "3", "4", "5<br>Very interested"],
+          required: true,
+          name: "pre_food"
+        }]);
+
 var wait_instructions1 = [{
-    timeline: [{
+    timeline: [
+      {
+        type: "survey-likert",
+        preamble: '<div id="instruct"><p>Before we proceed, please rate how interested you are to learn new information in each of the following topics:</p></div>',
+        timeline: [
+          {questions: pre_waiting_qs.splice(0,2)},
+          {questions: pre_waiting_qs}
+        ],
+        randomize_question_order: true,
+        scale_width: 500,
+        data: {
+          category: "pre_task_preferences"
+        }
+      },{
         type: 'instructions',
         pages: ['<div id="instruct"><p>You will now do a computer task about curiosity. Press the <i>Next</i> button to read the instructions for this task.</p></div>',
           '<div id="instruct"><p>In this task, you will be shown a series of trivia questions about animals, the arts, food or geography.</p></div>',
+        ],
+        show_clickable_nav: true,
+        allow_keys: false,
+        data: {
+          category: "wait_instructions1"
+        }
+      },
+      {
+        type: 'instructions',
+        pages: [
           '<div id="instruct"><p>For each question, you must decide if you want to know the answer to the question.<br></p><p>If you want to find out the answer, you will have to wait a certain amount of time.</p><p>If you do not want to wait to see the answer, you can choose to skip the question.</p><p>If you are 100% certain that you already know the answer to the question, you may indicate that you already know it.</p><p>If you choose to skip or indicate that you know the answer, you will NOT see the answer to the question.</p></div>',
           '<div id="instruct"><p>When you are first shown the trivia question, the screen will look like this:<p>\
   <center><img width="50%" src="../static/images/wait_instructions.jpg" border="1"></center>\
