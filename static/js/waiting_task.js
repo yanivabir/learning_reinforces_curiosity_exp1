@@ -28,6 +28,13 @@ var maxStimDuration = 10000, // Response deadline for questions
   waits = [3, 4, 5, 6, 7, 8, 9], // Wait times in task
   ITI_range = [500, 1200]; // Range of ITIs in task. Drawn from a uniform distribution on this range.
 
+// Get participant id form url
+var PID = jsPsych.data.getURLVariable('workerId');
+// Is this a debug run?
+var short = PID.includes("short");
+
+maxTaskTime = short ? 3 : maxTaskTime;
+
 // WTW Trials -----------------------------------------------
 
 // Show question response deadline warning, and update the warning counter

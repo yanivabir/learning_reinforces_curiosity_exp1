@@ -1,16 +1,16 @@
 // Parameters
 var sess = 1, // Session number
-  version = 1.0, // Code version number
-  n_for_ratings = 30;//20; // How many items to save for rating measurement
+  version = 1.0; // Code version number
 var images = ["../static/images/wait_instructions.jpg"]; // Images to preload
 
 // Get participant id form url
 var PID = jsPsych.data.getURLVariable('workerId')
 
-
-
 // Is this a debug run?
-var debug = PID.includes("debug");
+var debug = PID.includes("debug"),
+  short = PID.includes("short");
+
+var n_for_ratings = short ? 10 : 30;//20; // How many items to save for rating measurement
 
 // Keep important variables in global scope for convenience while debugging
 var items,
