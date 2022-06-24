@@ -16,9 +16,9 @@ var rating_trial = [fullscreen_prompt,
     // Curiosity rating
     type: "html-button-response",
     stimulus: function() {
-      return "How curious are you to know:<br><i>" + 
+      return "How curious are you to know:<br>" + 
         jsPsych.timelineVariable('question', true) +
-        "</i>"} ,
+        ""} ,
     choices: ["0","1", "2", "3", "4", "5"],
     prompt: "<div id='satisfaction_prompt'><i>0</i> = Know, <i>1</i> = Not at all, <i>5</i> = Extremely curious</div>",
     margin_horizontal: "30px",
@@ -83,7 +83,7 @@ var post_rating_qs = jsPsych.randomization.shuffle([{
 
 var post_rating = {
   type: "survey-likert",
-  preamble: '<div id="instruct"><p>Plese rate how interesting you found the information presented so far for each topic in this study:</p></div>',
+  preamble: '<div id="instruct"><p>Plese rate how interesting you found the information, both waiting and rating tasks, presented so far for each topic in this study:</p></div>',
   randomize_question_order: true,
   scale_width: 500,
   data: {

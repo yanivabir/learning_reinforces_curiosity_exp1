@@ -151,10 +151,8 @@ items = jsPsych.randomization.shuffle(items);
       pages: ['<div id="instruct">Thank you for participating in this experiment!<p>\
       In this study, we are interested in people\'s curiosity about different \
       types of questions.</p>\
-      <p>We will process your data within 48 hours and grant you an extra $2 to any \
-      participant that stayed engaged throughout the task.</p>\
-      <p>You will recieve an email invitiation for the next session early next week.</p>\
-      <p>You will  recieve $2 special bonus for participating in another session.</p></div>'],
+      <p>We will process your data within 48 hours and grant an extra $2 to any \
+      participant that stayed engaged throughout the task.</p></div>'],
       show_clickable_nav: true,
       allow_keys: false,
       data: {
