@@ -3,7 +3,7 @@ var rating_ITI = 500
 // This is the list of probes each question should be rated on
 var rating_probes = [{
     prompt: "How curious are you to know the answer to this question?",
-    labels: ["1<br>Not at all", "2", "3", "4", "5<br>Very much"],
+    labels: ["0<br>Know","1<br>Not at all", "2", "3", "4", "5<br>Very much"],
     required: true,
     name: "curiousity_rating"
 
@@ -19,8 +19,8 @@ var rating_trial = [fullscreen_prompt,
       return "How curious are you to know:<br><i>" + 
         jsPsych.timelineVariable('question', true) +
         "</i>"} ,
-    choices: ["1", "2", "3", "4", "5"],
-    prompt: "<div id='satisfaction_prompt'><i>1</i> = Not at all, <i>5</i> = Extremely curious</div>",
+    choices: ["0","1", "2", "3", "4", "5"],
+    prompt: "<div id='satisfaction_prompt'><i>0</i> = Know, <i>1</i> = Not at all, <i>5</i> = Extremely curious</div>",
     margin_horizontal: "30px",
     margin_vertical: "80px",
     post_trial_gap: rating_ITI,
@@ -40,6 +40,9 @@ var rating_instructions = {
     "<div id='instruct'><p>In the next part of this experiment, you will be \
     presented with 30 qustions. We would like you to rate each of these \
     questions on several scales.</p></div>",
+    "<div id='instruct'><p>If you are 100% confident that you know the answer \
+    to the question press 'Know' instead of rating your curiosity to the question. \
+    Only use this option for question you are absolutely sure you know the answer to. </p></div>",
     "<div id='instruct'><p>In this study we are interested in your own personal \
     judgment. Therefore it is important that you rely only on your own \
     knowledge and give your best answer \"off the top of your head.\"</p></div>",
