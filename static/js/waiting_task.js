@@ -20,9 +20,7 @@
 var maxStimDuration = 10000, // Response deadline for questions
   minResponseTime = 1500, // Minimum response time for questions
   satisfactionMaxTime = 3500, // Maximum response time for satisfaction rating
-  tooSlowTime = 1000, // Duration of warning message
   maxAnswerTime = 7000, // Response deadline for answers
-  postTooSlowTime = 800, // ITI post warning message
   fixationTime = 500, // Duration of fixation period b/w trials
   maxTaskTime = 20, // Total duration of block
   waits = [3, 4, 5, 6, 7, 8, 9], // Wait times in task
@@ -36,24 +34,6 @@ var short = PID.includes("short");
 maxTaskTime = short ? 3 : maxTaskTime;
 
 // WTW Trials -----------------------------------------------
-
-// Show question response deadline warning, and update the warning counter
-var too_slow = [kick_out, {
-  type: 'html-keyboard-response',
-  stimulus: '<div style="font-size: 150%">Please choose more quickly</div>',
-  choices: jsPsych.NO_KEYS,
-  trial_duration: tooSlowTime,
-  on_finish: function() {
-    var up_to_now = parseInt(jsPsych.data.get().last(1).select('n_warnings').values);
-    jsPsych.data.addProperties({
-      n_warnings: up_to_now + 1
-    });
-  },
-  data: {
-    category: 'too-slow'
-  },
-  post_trial_gap: postTooSlowTime
-}];
 
 // Show answer response deadline warning, and update the warning counter
 var answer_n_respond = [kick_out, {

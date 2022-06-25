@@ -5,6 +5,7 @@ var images = ["../static/images/wait_instructions.jpg"]; // Images to preload
 
 // Get participant id form url
 var PID = jsPsych.data.getURLVariable('workerId')
+jsPsych.data.addProperties({n_warnings: 0});
 
 // Is this a debug run?
 var debug = PID.includes("debug"),
@@ -114,15 +115,6 @@ items = jsPsych.randomization.shuffle(items);
     timeline_variables: items_waiting 
   }
   
-
-
-
-  // Shuffle probe order across trials
-  for (i = 0; i < items_rating.length; i++) {
-    items_rating[i]["probes"] =
-      jsPsych.randomization.shuffle(rating_probes);
-  }
-
   // Rating block variable
   var rating_block = {
     timeline: rating_trial,
@@ -212,13 +204,13 @@ items = jsPsych.randomization.shuffle(items);
 
 
   // Put it all together
-  experiment.push(fullscreen);
-  experiment.push(welcome);
-  experiment = experiment.concat(wait_instructions1);
-  experiment.push(wait_practice_block);
-  experiment.push(wait_instructions_post_practice);
-  experiment.push(wait_block1);
-  experiment.push(wait_instructions_post_task);
+  // experiment.push(fullscreen);
+  // experiment.push(welcome);
+  // experiment = experiment.concat(wait_instructions1);
+  // experiment.push(wait_practice_block);
+  // experiment.push(wait_instructions_post_practice);
+  // experiment.push(wait_block1);
+  // experiment.push(wait_instructions_post_task);
   experiment.push(rating_instructions);
   experiment.push(rating_block);
   experiment.push(post_rating);
