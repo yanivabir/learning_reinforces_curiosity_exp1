@@ -1,14 +1,5 @@
 // Javascript functions and varialbes for measuring ratings about questions
 var rating_ITI = 500
-// This is the list of probes each question should be rated on
-var rating_probes = [{
-    prompt: "How curious are you to know the answer to this question?",
-    labels: ["0<br>Know","1<br>Not at all", "2", "3", "4", "5<br>Very much"],
-    required: true,
-    name: "curiousity_rating"
-
-  },
-]
 
 // Rating trial
 var rating_trial = [fullscreen_prompt,
