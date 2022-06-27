@@ -23,14 +23,14 @@ AN_21,general,Animal,What brighly colored monkey is the world's largest?,The man
 AN_22,general,Animal,Which is the only mammal that can kneel on all fours?,Elephant
 AN_23,general,Animal,Which animal is responsible for the most human deaths worldwide?,Mosquito
 AN_24,general,Animal,What is the most common mammal in the U.S.?,Mouse
-AN_25,general,Animal,"Under their white fur, what color is a polar bear’s skin?",Black
+AN_25,general,Animal,"Under their white fur, what color is a polar bear's skin?",Black
 AN_06,general,Animal,How long does it take a sloth to digest a meal?,About two weeks
 AN_27,general,Animal,What is the only type of lizard that has a voice?,Gecko
 AN_28,general,Animal,Which is the only cat that cannot retract its claws?,Cheetah
 AN_29,general,Animal,Which animal can move its eyes in two directions at the same time?,Chameleon
 AN_30,general,Animal,"In the American legal system, evidence provided by which animal is admissible in court?",Bloodhound
 AN_31,general,Animal,What is the only type of animal besides a human that can get a sunburn?,Pig
-AN_32,general,Animal,What’s a group of kittens called?,Kindle
+AN_32,general,Animal,What's a group of kittens called?,Kindle
 AN_33,general,Animal,"What animal is thought to be immune to most all diseases, including cancer?",Shark
 AN_34,general,Animal,Lobster blood is what color?,Blue
 AN_35,general,Animal,What are male honeybees called?,Drones
@@ -74,8 +74,8 @@ AN_72,general,Animal,What animal is potentially immortal?,The jellyfish Turritop
 AN_73,general,Animal,What animal has the longest terrestrial migrations in the world?,Caribou
 AN_74,general,Animal,Which insect can lift up to 50 times its body weight?,Ants
 AN_75,general,Animal,What animal can snap its claws shut to stun its prey and generate a sonic blast louder than the sound of a gunshot reaching 210 decibels?,The pistol shrimp
-AR_01,general,Art,Which pop star is the godmother of both of Elton John’s sons?,Lady Gaga
-AR_02,general,Art,What is Rihanna’s real name?,Robyn Fenty
+AR_01,general,Art,Which pop star is the godmother of both of Elton John's sons?,Lady Gaga
+AR_02,general,Art,What is Rihanna's real name?,Robyn Fenty
 AR_03,general,Art,"Who was the first winner of the show ""The Masked Singer"" in 2019?",T-Pain
 AR_04,general,Art,How many kids does Angelina Jolie have?,"6 (Maddox, Pax, Zahara, Shiloh, Knox, and Vivienne)."
 AR_05,general,Art,What year did Keeping Up with the Kardashians first premier?,2007
@@ -93,7 +93,7 @@ AR_16,general,Art,"Shakespeare mentioned his wife only once in his will, making 
 AR_17,general,Art,"What 1990s one-hit wonder wrote Christina Aguilera's hit ""Beautiful""? ",Linda Perry
 AR_18,general,Art,Which film is shown during NASA's management trianing program with the task of spotting as many errors as possible?,Armageddon
 AR_19,general,Art,Who is actress Rashida Jones's famous mother?,Peggy Lipton
-AR_20,general,Art,Which artist made history in 2020 as the youngest winner of the Grammys’ four main categories?,Billie Eilish
+AR_20,general,Art,Which artist made history in 2020 as the youngest winner of the Grammys' four main categories?,Billie Eilish
 AR_21,general,Art,Which was the only one of his sculptures that Michelangelo signed?,The Pieta
 AR_22,general,Art,What was the first American novel to sell one million copies?,Uncle Tom's Cabin
 AR_23,general,Art,Which actress tried to hire a hitman to kill herself at the age of 22?,Angelina Jolie
@@ -177,13 +177,13 @@ FO_25,general,Food,"What object, because of its physical similarities, inspired 
 FO_26,general,Food,What is the name of the scale chefs use to measure the spiciness heat of pepper?,Scoville scale
 FO_27,general,Food,What dish has Indian origin but is the national dish of England?,Chicken Tikka masala
 FO_28,general,Food,Coffee can only be commercially grown in which two states in the US?,California and Hawaii
-FO_29,general,Food,Fiochetti is pasta comes in what shape?,Bows
+FO_29,general,Food,Fiochetti is pasta that comes in what shape?,Bows
 FO_30,general,Food,What are butter beans in the UK called in the US?,Lima beans
 FO_31,general,Food,Gerber's most popular flavor of baby food is what?,Mashed bananas
 FO_32,general,Food,What is the record for the most hotdogs eaten in one sitting at Nathan's Hot Dog Eating Contest?,76 in 10 minutes
 FO_33,general,Food,What are Cantonese mooncakes filled with?,Red bean paste or lotus seed paste
 FO_34,general,Food,What three groups are Kosher foods divided into?,"Meat, dairy and pareve"
-FO_35,general,Food,What is the most consumed insect in the world?,Crickets
+FO_35,general,Food,"What is the proffessional name for cutting vegetables into short, thin strips?",Julienne
 FO_36,general,Food,"In 1930, which food made its debut in Pennsylvania?",The Philly Cheesesteak
 FO_37,general,Food,Which of the world's most widely distributed food crop does not exist naturally in the wild?,Corn
 FO_38,general,Food,What practice to cultivate food is the world's largest industry?,Agriculture
@@ -208,12 +208,12 @@ FO_56,general,Food,"Under ultraviolet light, what popular soft drink can glows b
 FO_57,general,Food,What was the first modern American supermarket?,"Piggly Wiggly in Memphis, Tennessee"
 FO_58,general,Food,"Before the late 16th century, what color was the original carrot?",Purple
 FO_59,general,Food,What is the study of grape cultivation called?,Viticulture
-FO_60,general,Food,What insect is responsible for pollinating figs?,Wasps
+FO_60,general,Food,What does the dish Devil on Horseback contain?,Bacon and prunes
 FO_61,general,Food,What tree gives us prunes?,Plum tree
 FO_62,general,Food,"What ingredient in fresh milk is eventually devoured by bacteria, causing the sour taste?",Lactose
-FO_63,general,Food,"What's the only fish that produces real caviar, according to the FDA?",Sturgeon
-FO_64,general,Food,What fish is one of the most expensive to eat in the world?,Bluefin Tuna
-FO_65,general,Food,Who developed the first ovens?,Egyptians
+FO_63,general,Food,Cured Salmon is the main ingredient of which food?,Gravlax
+FO_64,general,Food,What is the national food of Italy,Bolognese sauce with tagliatelle pasta.
+FO_65,general,Food,Who developed the first baking ovens?,Egyptians
 FO_66,general,Food,"What condiment, usually consumed in solid form on Earth, is only available in liquid form in space?",Salt and pepper
 FO_67,general,Food,What is the only fruit with seeds on the outside?,Strawberries
 FO_68,general,Food,Which variety of chili pepper is considered the hottest in the world?,The Carolina Reaper
