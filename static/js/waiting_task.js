@@ -346,7 +346,8 @@ var wait_instructions1 = [{
   },
   {
     type: "html-button-response",
-    stimulus: "<div id='instruct'>Press <i>Continue</i> to start the short training block.</div>",
+    stimulus: "<div id='instruct'><p>You are ready for a short practice. Please use this time to get used to pressing the different buttons and to the amount of time you have to respond to the different prompts.</p>\
+    <p>Press <i>Continue</i> to start the short training block.</p></div>",
     choices: ["Continue"],
     margin_vertical: "80px",
     data: {
