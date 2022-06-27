@@ -72,7 +72,7 @@ AN_70,general,Animal,Which is the largest species of dolphin?,Orca (Killer Whale
 AN_71,general,Animal,"What is the only bird that can fly straight up, down, or backward?",Hummingbird
 AN_72,general,Animal,What animal is potentially immortal?,The jellyfish Turritopsis dohrnii
 AN_73,general,Animal,What animal has the longest terrestrial migrations in the world?,Caribou
-AN_74,general,Animal,How far can fleas jump into the air?,"2 feet in height, or 40 to 100 times their body length"
+AN_74,general,Animal,Which insect can lift up to 50 times its body weight?,Ants
 AN_75,general,Animal,What animal can snap its claws shut to stun its prey and generate a sonic blast louder than the sound of a gunshot reaching 210 decibels?,The pistol shrimp
 AR_01,general,Art,Which pop star is the godmother of both of Elton John’s sons?,Lady Gaga
 AR_02,general,Art,What is Rihanna’s real name?,Robyn Fenty
@@ -83,10 +83,10 @@ AR_06,general,Art,Who was the only actor of the Star Wars films that was nominat
 AR_07,general,Art,"For the 2019 film ""1917"", which was edited to look like one continuous shot, how many minutes was the longest actual uninterrupted take?",Eight and a half minutes
 AR_08,general,Art,"Which actor, known for his role in the TV sitcom ""Friends"", has part of his middle finger missing?",Matthew Perry
 AR_09,general,Art,Whitney Houston was a producer on which commercially successful coming-of-age comedy film in 2001?,The Princess Diaries
-AR_10,general,Art,"How many years passed between the release of ""Top Gun"" and ""Top Gun: Maverick""?",36
-AR_11,general,Art,"How much money did the Department of Defense charge ""Top Gun"" to film at a naval air station and use their aircraft carriers and planes in 1986?",$1.8 million
+AR_10,general,Art,What film has the highest production cost?,Pirates of the Caribbean: On Stranger Tides
+AR_11,general,Art,Which movie kicked off the Marvel Cinematic Universe?,Iron Man
 AR_12,general,Art,Who was sued in 1999 by Rosa Parks after they used her name to title a hit song?,OutKast
-AR_13,general,Art,"How many sequels for James Cameron's ""Avatar"" is there planned?",Four
+AR_13,general,Art,"What is the name of the second film in James Cameron's ""Avatar""'s series?",Avatar: The Way of Water
 AR_14,general,Art,"Which actor gave a reading at Stephen Hawking's funeral after playing Hawking and befriending him during the filming of his biopic ""The Theory of Everything""?",Eddie Redmayne
 AR_15,general,Art,What's the only Best Picture Oscar winner whose title ends with an exclamation point?,Oliver!
 AR_16,general,Art,"Shakespeare mentioned his wife only once in his will, making her the odd bequest of his ""second best"" what? ",Bed
@@ -97,7 +97,7 @@ AR_20,general,Art,Which artist made history in 2020 as the youngest winner of th
 AR_21,general,Art,Which was the only one of his sculptures that Michelangelo signed?,The Pieta
 AR_22,general,Art,What was the first American novel to sell one million copies?,Uncle Tom's Cabin
 AR_23,general,Art,Which actress tried to hire a hitman to kill herself at the age of 22?,Angelina Jolie
-AR_24,general,Art,"The film ""Dallas Buyers Club"" won an Oscar for best makeup and hairstyling category with a budget of how much?",$250
+AR_24,general,Art,"The film ""Dallas Buyers Club"", with a budget of $250 for makeup and hairstyling, won which award in 2014?",The Oscars for Best Makeup and Hairstyling
 AR_25,general,Art,"The title of the song ""Kumbaya"" is actually a distortion of what three-word phrase?",Come by her
 AR_26,general,Art,What classic Disney song was inspired by lyricist Robert Sherman's fiver-year old son receiving the Sabin polio vaccine at school?,A Spoonful of Sugar
 AR_27,general,Art,Who was the first woman film director to have a film take in more than $100 million at the box office?,Penny Marshall
@@ -149,8 +149,8 @@ AR_72,general,Art,Which book was written in response to an editor's challenge to
 AR_73,general,Art,Who wrote the children's story entitled 'The Little Mermaid'?,Hans Christian Andersen
 AR_74,general,Art,"Who plays drums on the Beatles track ""Back in the U.S.S.R""? ",Paul McCartney
 AR_75,general,Art,"What British author wrote ""Keep the Aspidistra Flying"" about his years working as an assistant at a used bookshop in Hampstead?",George Orwell
-FO_01,general,Food,"How much per kilo does the world's most expensive fungus, the white truffle, cost?","~ USD$3,000"
-FO_02,general,Food,When was hot chocolate first made?,"2,500 to 3,000 years ago"
+FO_01,general,Food,What is the world's most expensive fungus?,White truffle
+FO_02,general,Food,Who made the first hot chocolate drink?,The Maya and Aztec peoples
 FO_03,general,Food,What plant's roots are used to make tapioca?,The cassava's
 FO_04,general,Food,What chili pepper was believed the hottest in the world until the Naga Jolokia pepper was discovered in India in 2000?,Habanero
 FO_05,general,Food,What is a cluster of bananas called?,A hand
@@ -184,7 +184,7 @@ FO_32,general,Food,What is the record for the most hotdogs eaten in one sitting 
 FO_33,general,Food,What are Cantonese mooncakes filled with?,Red bean paste or lotus seed paste
 FO_34,general,Food,What three groups are Kosher foods divided into?,"Meat, dairy and pareve"
 FO_35,general,Food,What is the most consumed insect in the world?,Crickets
-FO_36,general,Food,How many species of spiders are generally considered edible?,15
+FO_36,general,Food,"In 1930, which food made its debut in Pennsylvania?",The Philly Cheesesteak
 FO_37,general,Food,Which of the world's most widely distributed food crop does not exist naturally in the wild?,Corn
 FO_38,general,Food,What practice to cultivate food is the world's largest industry?,Agriculture
 FO_39,general,Food,Which commonly consumed meat has the highest carbon footprint?,Lamb
@@ -199,11 +199,11 @@ FO_47,general,Food,Farmed salmon has to be dyed pink while real wild salmon has 
 FO_48,general,Food,Where was American cheese invented?,Switzerland
 FO_49,general,Food,What is the most stolen food in the world?,Cheese
 FO_50,general,Food,What brand takes up 25% of the entire world's production of hazelnut?,Nutella
-FO_51,general,Food,How many burgers do McDonalds sell every year?,2.5 billion
+FO_51,general,Food,In which American state was Coca-Cola was first sold?,"Atlanta, Geogria"
 FO_52,general,Food,Where was the canned pork Spam invented?,Minnesota
 FO_53,general,Food,What deadly chemical can be produced upon consumption of raw lima beans?,Cyanide
 FO_54,general,Food,"What is ""Bird's nest soup"" made up of?",Solidified bird saliva
-FO_55,general,Food,How many insect fragments does the FDA allow in 100 grams of chocolate?,60
+FO_55,general,Food,"What method of preserving food did the Incas first use, on potatoes?",Freeze drying
 FO_56,general,Food,"Under ultraviolet light, what popular soft drink can glows bright blue?",Tonic water
 FO_57,general,Food,What was the first modern American supermarket?,"Piggly Wiggly in Memphis, Tennessee"
 FO_58,general,Food,"Before the late 16th century, what color was the original carrot?",Purple
@@ -212,7 +212,7 @@ FO_60,general,Food,What insect is responsible for pollinating figs?,Wasps
 FO_61,general,Food,What tree gives us prunes?,Plum tree
 FO_62,general,Food,"What ingredient in fresh milk is eventually devoured by bacteria, causing the sour taste?",Lactose
 FO_63,general,Food,"What's the only fish that produces real caviar, according to the FDA?",Sturgeon
-FO_64,general,Food,How many different tastes do humans have?,Five
+FO_64,general,Food,What fish is one of the most expensive to eat in the world?,Bluefin Tuna
 FO_65,general,Food,Who developed the first ovens?,Egyptians
 FO_66,general,Food,"What condiment, usually consumed in solid form on Earth, is only available in liquid form in space?",Salt and pepper
 FO_67,general,Food,What is the only fruit with seeds on the outside?,Strawberries
@@ -242,9 +242,9 @@ GE_15,general,Geography,What is the highest peak of the Andes Mountains called?,
 GE_16,general,Geography,"What state's motto is ""friendship"" since that's supposed to have been the meaning of the state's Caddo Indian name?",Texas
 GE_17,general,Geography,"In what state were ""My Governor Can Beat Up Your Governor"" bumper stickers popular beginning in 1998?",Minnesota
 GE_18,general,Geography,"Until 2007, what was the only country in the world not to have registered it's own internet domain suffix, "".kp""?",North Korea
-GE_19,general,Geography,How much of the Earth's fresh water is held in rivers?,Less than 0.5%
+GE_19,general,Geography,Less than 0.5% of Earth's fresh water is held in what naturally occuring flowing watercourse?,Rivers
 GE_20,general,Geography,What is sinology the study of?,China
-GE_21,general,Geography,Where is the prime meridian which devides the Earth into two hemispheres located?,"Greenwich, England"
+GE_21,general,Geography,What river runs through Dublin?,Liffey
 GE_22,general,Geography,The point on land closest to the North Pole belongs to what nation?,Denmark
 GE_23,general,Geography,"What U.S. state has the slogan ""Native America"" on its license plates?",Oklahoma
 GE_24,general,Geography,What Blue Ridge peak in North Carolina is the highest point east of the Mississippi?,Mount Mitchell
@@ -281,7 +281,7 @@ GE_54,general,Geography,What range contains the world's highest mountains not lo
 GE_55,general,Geography,What river runs through Cleveland?,Cuyahoga
 GE_56,general,Geography,"Where would you find the 89,000-foot peak Olympus Mons?",Mars
 GE_57,general,Geography,"What distinction is usually claimed to belong to Gangkhar Puensum, a 24,000-foot peak in Bhutan?",The highest unclimbed mountain in the world
-GE_58,general,Geography,What is the longest cave system on Earth?,"Mammoth Cave, at 420 miles"
+GE_58,general,Geography,What is the longest cave system on Earth?,Mammoth Cave
 GE_59,general,Geography,Which dam is the world's biggest hydroelectric facility?,The Three Gorges Dam on the Yangtze River
 GE_60,general,Geography,What is the Earth's biggest earthquake belt?,"The rim of the Pacific Ocean, also called the ""Ring of Fire"""
 GE_61,general,Geography,Where is the saltiest landlocked body of water located?,"The Gaet'ale Pond in Afar, Ethiopia"
@@ -290,8 +290,8 @@ GE_63,general,Geography,"Where is the Juan de Fuca Plate, one of the Earth's sma
 GE_64,general,Geography,"What is the capital of the State of Washington, United States?",Olympia
 GE_65,general,Geography,What is the capital of Senegal?,Dakar
 GE_66,general,Geography,"Which country has the abbreviation ""CH""?",Switzerland
-GE_67,general,Geography,How many timezones does Russia have?,11
-GE_68,general,Geography,What is the area of Vatican City?,44 hectares (0.44 km²; 110 acres)
+GE_67,general,Geography,What country has the most timezones?,France
+GE_68,general,Geography,What is the smallest country in the world?,Vatican City
 GE_69,general,Geography,What is the least populus city in the world?,Vatican City
 GE_70,general,Geography,What is the country with the largest number of Muslims overall?,Indonesia
 GE_71,general,Geography,What is the capital of Mauritius?,Port Louis
