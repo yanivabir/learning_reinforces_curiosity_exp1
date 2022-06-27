@@ -195,7 +195,7 @@ items = jsPsych.randomization.shuffle(items);
         category: "data_saved"
       },
       stimulus: "<div class='instructions'><p>Your results have successfully uploaded.</p>\
-    <p>Your completion code for this study is: <br> <b>EK92HN4</b></p>\
+    <p>Your completion code for this study is: <br> <b>EK92JK4</b></p>\
     <p>Use it to submit this HIT on MTurk.</p>\
     <p>You may now close this window.</p></div>",
       choices: jsPsych.NO_KEYS
@@ -215,10 +215,10 @@ items = jsPsych.randomization.shuffle(items);
   experiment.push(rating_block);
   experiment.push(post_rating);
   experiment.push(pre_questionnaires_message);
-  experiment.push(impulse_message);
-  experiment = experiment.concat(impulsive);
   experiment.push(regfocus_message);
   experiment = experiment.concat(reg_focus);
+  experiment.push(impulse_message);
+  experiment = experiment.concat(impulsive);
   experiment.push(apathy_message);
   experiment = experiment.concat(apathy);
   experiment.push(pleasure_message);
