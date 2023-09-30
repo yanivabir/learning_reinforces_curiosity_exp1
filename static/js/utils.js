@@ -120,3 +120,52 @@ function saveData(PID, sess, part, data, onComplete = function() {}, type = 'csv
   }));
 }
 
+function createSecondSesssList(keysToRemove) {
+  questions = jsPsych.data.get().filter({category: "wait_question",
+    is_practice: false}).filter({button_pressed: "1"}).values();
+
+  answers = jsPsych.data.get().filter({category: "wait_answer",
+    is_practice: false}).values()
+
+  // Renaming the key "stimulus" to "question" in array1
+  const array1WithRenamedKey = questions.map(obj => {
+    const newObj = { ...obj };
+    newObj.question = newObj.stimulus;
+    delete newObj.stimulus;
+    return newObj;
+  });
+
+  // Renaming the key "stimulus" to "answer" in array2
+  const array2WithRenamedKey = answers.map(obj => {
+    const newObj = { ...obj };
+    newObj.answer = newObj.stimulus;
+    delete newObj.stimulus;
+    return newObj;
+  });
+
+  // Perform inner join using map
+  var m = new Map();
+  
+  array1WithRenamedKey.forEach(function(x) {
+    m.set(x.questionId, x);
+  });
+
+  array2WithRenamedKey.forEach(function(x) {
+    var existing = m.get(x.questionId);
+    if (existing === undefined)
+        console.log("missed answer " + x.questionId)
+    else
+        Object.assign(existing, x);
+  });
+
+  var result = Array.from(m.values());
+
+  // Remove keys from the resulting array of objects
+  const modifiedResult = result.map(obj => {
+    keysToRemove.forEach(key => delete obj[key]);
+    return obj;
+  });
+
+  return objectToCsv(modifiedResult);
+}
+

@@ -107,12 +107,18 @@ items = jsPsych.randomization.shuffle(items);
   // Build waiting task blocks
   wait_practice_block = {
     timeline: wait_timeline,
-    timeline_variables: practice_items
+    timeline_variables: practice_items,
+    data: {
+      is_practice: true
+    }
   }
 
   wait_block1 = {
     timeline: wait_timeline,
-    timeline_variables: items_waiting 
+    timeline_variables: items_waiting,
+    data: {
+      is_practice: false
+    }
   }
   
   // Rating block variable
@@ -185,9 +191,11 @@ items = jsPsych.randomization.shuffle(items);
         saveData(PID, sess, '', jsPsych.data.get().csv(),
           function() {
             saveData(PID, sess, '_int', jsPsych.data.getInteractionData().csv(),
-          jsPsych.finishTrial);
+              function() {
+              saveData(PID, 0, "_secondSessStims", createSecondSesssList(['trial_type', 'button_pressed']),
+                jsPsych.finishTrial);
           });
-      }
+      });
     },
     {
       type: "html-keyboard-response",
