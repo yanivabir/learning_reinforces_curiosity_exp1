@@ -105,11 +105,12 @@ function check_fullscreen(){
 }
 
 // Save data to file functions
+// Save data to file functions
 function saveData(PID, sess, part, data, onComplete = function() {}, type = 'csv') {
   console.log(onComplete)
   var d = new Date;
-  name = 'S' + PID + '_sess' + sess + '_' + d.toISOString().slice(0, 10) +
-    part + '.' + type;
+  var name = sess > 0 ? 'S' + PID + '_sess' + sess + '_' + d.toISOString().slice(0, 10) +
+    part + '.' + type : 'S' + PID + part + '.' + type;
   var xhr = new XMLHttpRequest();
   xhr.addEventListener("load", onComplete);
   xhr.open('POST', 'write_data.php');
@@ -119,6 +120,7 @@ function saveData(PID, sess, part, data, onComplete = function() {}, type = 'csv
     filedata: data
   }));
 }
+
 
 function createSecondSesssList(keysToRemove) {
   questions = jsPsych.data.get().filter({category: "wait_question",
