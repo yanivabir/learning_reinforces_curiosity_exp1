@@ -1,6 +1,6 @@
 // Parameters
 var sess = 1, // Session number
-  version = 1.0; // Code version number
+  version = 1.01; // Code version number: bump version for collecting more data with memory
 var images = ["../static/images/wait_instructions.jpg"]; // Images to preload
 
 // Get participant id form url
