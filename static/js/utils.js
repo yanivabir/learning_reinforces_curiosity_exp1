@@ -105,7 +105,6 @@ function check_fullscreen(){
 }
 
 // Save data to file functions
-// Save data to file functions
 function saveData(PID, sess, part, data, onComplete = function() {}, type = 'csv') {
   console.log(onComplete)
   var d = new Date;
