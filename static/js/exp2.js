@@ -13,7 +13,7 @@ var debug = PID.includes("debug");
 var viewed_answers;
 
 // Load items from local csv file
-Papa.parse("../static/secSessStims/S" + PID + "_viewedAnswers.csv", {
+Papa.parse("../static/secSessStims/S" + PID + "_secondSessStims.csv", {
   download: true,
   header: true,
   dynamicTyping: true,
