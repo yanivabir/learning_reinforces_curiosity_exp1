@@ -193,21 +193,13 @@ items = jsPsych.randomization.shuffle(items);
             saveData(PID, sess, '_int', jsPsych.data.getInteractionData().csv(),
               function() {
               saveData(PID, 0, "_secondSessStims", createSecondSesssList(['trial_type', 'button_pressed']),
-                jsPsych.finishTrial)
+                function() {
+                  window.removeEventListener('beforeunload', preventRefresh);
+                  window.location.replace("https://connect.cloudresearch.com/participant/project/94675d6ae8dc41a4bb3a596676ade2d1/complete")
+                })
               });
           });
       }
-    },
-    {
-      type: "html-keyboard-response",
-      data: {
-        category: "data_saved"
-      },
-      stimulus: "<div class='instructions'><p>Your results have successfully uploaded.</p>\
-    <p>Your completion code for this study is: <br> <b>EK92JK4</b></p>\
-    <p>Use it to submit this HIT on MTurk.</p>\
-    <p>You may now close this window.</p></div>",
-      choices: jsPsych.NO_KEYS
     }
   ];
 
