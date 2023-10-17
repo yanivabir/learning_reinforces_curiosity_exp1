@@ -7,8 +7,8 @@ var minResponseTime = 1500;
 var recall_trial = [fullscreen_prompt, {
     type: "html-button-response-min-time",
     stimulus: function() {
-      return "<div id'instruct'><p>" + jsPsych.timelineVariable('preamble1', true) + 
-      "</p><p><i>" + jsPsych.timelineVariable('question', true).replaceAll('""""', '"') +
+      return "<div id'instruct'><p>Do you remember the answer you read last week \
+      to this question:</p><p><i>" + jsPsych.timelineVariable('question', true).replaceAll('""""', '"') +
         "</i></p></div>"
     },
     choices: ["Yes", "No"],
