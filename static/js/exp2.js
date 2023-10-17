@@ -79,10 +79,9 @@ function postLoad() {
   };
 
   // Shuffle questions for recall
-  viewed_answers = shuffle_viewed_answers(viewed_answers);
+  viewed_answers = jsPsych.randomization.shuffle(viewed_answers);
 
   // Answer recall block
-  // Removed corona recall and pre-questionnaire instructions
   var answer_recall_block = {
     timeline: recall_trial,
     timeline_variables: viewed_answers

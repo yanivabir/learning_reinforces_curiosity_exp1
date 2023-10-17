@@ -78,12 +78,3 @@ var recall_instructions1 = {
     category: "recall_instructions1"
   }
 };
-
-// Remove corona_qs, general_qs, and third_qs since there is only one block
-function shuffle_viewed_answers(questions) {
-  task_qs = jsPsych.randomization.shuffle(questions.filter(task_items_curiosity))
-
-  var shuf_questions = shuf_questions.concat(task_qs);
-
-  return shuf_questions
-}
