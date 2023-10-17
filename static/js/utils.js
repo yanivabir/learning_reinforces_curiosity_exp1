@@ -140,7 +140,7 @@ const objectToCsv = function (data) {
   // Loop to get value of each objects key
   for (const row of data) {
       const values = headers.map(header => {
-          const val = row[header]
+          const val = typeof(row[header]) == "string" ? row[header].replaceAll('"', '""') : row[header]
           return `"${val}"`;
       });
 
