@@ -58,11 +58,10 @@ function postLoad() {
     type: "instructions",
     pages: [
       "<div id='instruct'><p>Welcom back to this study!</p>\
-      <p>On week ago, you completed several tasks related to your curiosity \
-      towards different questions, and your judgments and perceptions of various \
-      topics.</p>\
+      <p>On week ago, you completed a task abour to your curiosity \
+      towards different questions.</p>\
       <p>Today, we are interested in your memory of the previous session. \
-      Throughout the first part of this session, you will be asked to recall \
+      Throughout this session, you will be asked to recall \
       the reading material from last week.</p></div>",
       "<div id='instruct'><p>When prompted, please try your best to remember \
       the relevant piece of information from last week.</p><p>We will be going over \
