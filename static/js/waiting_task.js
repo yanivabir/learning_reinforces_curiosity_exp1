@@ -22,7 +22,7 @@ var maxStimDuration = 10000, // Response deadline for questions
   satisfactionMaxTime = 3500, // Maximum response time for satisfaction rating
   maxAnswerTime = 7000, // Response deadline for answers
   fixationTime = 500, // Duration of fixation period b/w trials
-  maxTaskTime = 20, // Total duration of block
+  maxTaskTime = 1, // Total duration of block
   waits = [3, 4, 5, 6, 7, 8, 9], // Wait times in task
   ITI_range = [500, 1200]; // Range of ITIs in task. Drawn from a uniform distribution on this range.
 
