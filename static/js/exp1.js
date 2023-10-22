@@ -32,6 +32,13 @@ Papa.parse("../static/questions.csv", {
 
 var experiment = [];
 
+function preventRefresh(e) {
+  // Cancel the event
+  e.preventDefault();
+  e.returnValue = '';
+}
+
+
 // Loading csvs takes time. That's why we wrap everything else in a function that only
 // runs after the csvs load
 function postLoad() {
@@ -195,7 +202,8 @@ items = jsPsych.randomization.shuffle(items);
               saveData(PID, 0, "_secondSessStims", createSecondSesssList(['trial_type', 'button_pressed']),
                 function() {
                   window.removeEventListener('beforeunload', preventRefresh);
-                  window.location.replace("https://connect.cloudresearch.com/participant/project/94675d6ae8dc41a4bb3a596676ade2d1/complete")
+                  window.location.replace("https://connect.cloudresearch.com/participant/project/86c31017f723408b96a5f92e03ff689f/complete" + 
+                  window.location.search)
                 })
               });
           });
@@ -234,11 +242,7 @@ items = jsPsych.randomization.shuffle(items);
     document.addEventListener('contextmenu', event => event.preventDefault());
 
     // Prompt before refresh
-    window.addEventListener('beforeunload', function(e) {
-      // Cancel the event
-      e.preventDefault();
-      e.returnValue = '';
-    });
+    window.addEventListener('beforeunload', preventRefresh);
 
   }
 
