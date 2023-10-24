@@ -143,7 +143,7 @@ function postLoad() {
             saveData(PID, sess, '_int', jsPsych.data.getInteractionData().csv(),
             function() {
               window.removeEventListener('beforeunload', preventRefresh);
-              window.location.replace("https://connect.cloudresearch.com/participant/project/86c31017f723408b96a5f92e03ff689f/complete" + 
+              window.location.replace("https://connect.cloudresearch.com/participant/project/974ea70e0fd84155994561b4db92102c/complete" + 
               window.location.search)
         });
           });
